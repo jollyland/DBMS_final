@@ -3,7 +3,6 @@ import time
 from lxml import etree
 import requests
 import pandas as pd
-from django import *
 Link = ['https://university-tw.ldkrsi.men/caac/006/#gsc.tab=0']
 url = Link[0]
 browser = webdriver.Chrome('./chromedriver')
