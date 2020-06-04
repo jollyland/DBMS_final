@@ -26,6 +26,7 @@ for i in uni_link:
 CODE = list()
 NUMBER = list()
 STANDER = list()
+NAME = list()
 for i in range(5):
     s_list = list()
     STANDER.append(s_list)
@@ -49,7 +50,6 @@ for k in range(len(UniversityLink)):
     res = session.get(url, headers=headers)
     html = etree.HTML(res.text)
     browser.quit()
-
     standard = list()
     multiple = list()
 
@@ -60,6 +60,10 @@ for k in range(len(UniversityLink)):
     memNum = html.xpath('//div[@class="container-big"]//table[@class="depsTable"]//tbody//tr//td[3]/text()')
     for i in memNum:
         NUMBER.append(i)
+
+    name = html.xpath('//div[@class="container-big"]//table[@class="depsTable"]//tbody//tr//td[2]//a/text()')
+    for i in name:
+        NAME.append(i)
 
     for i in range(5):
         j = i+4
@@ -78,7 +82,7 @@ for k in range(len(UniversityLink)):
             MULTIPLE[subject].append(s)
 
 
-df = pd.DataFrame({"Code": CODE, "num": NUMBER, "s_Chinese": STANDER[0], "s_English": STANDER[1], "s_Math":STANDER[2],
+df = pd.DataFrame({"Code": CODE, "name":NAME,"num": NUMBER, "s_Chinese": STANDER[0], "s_English": STANDER[1], "s_Math":STANDER[2],
                    "s_Society":STANDER[3], "s_Science":STANDER[4],"m_Chinese": MULTIPLE[0], "m_English": MULTIPLE[1], "m_Math":MULTIPLE[2],
                    "m_Society":MULTIPLE[3], "m_Science":MULTIPLE[4]})
 
@@ -87,4 +91,4 @@ print(len(NUMBER))
 print(len(STANDER[0]))
 print(len(MULTIPLE[0]))
 
-df.to_csv('./學測_.csv')
+df.to_csv('./學測_.csv',index=False)
