@@ -1,4 +1,11 @@
 # python script useage
+```
+    git clone  -b sortout https://github.com/jollyland/DBMS_final.git
+
+```
+```
+     python generateDatabase.py -d "name of database" -n postgres -password 123456 -ip localhost -p 5433
+```
 
 # Tables 
 
@@ -14,5 +21,7 @@
 ###### 底       1
 
 #### AST(Advanced Subjects Test)             指考
+###### math1    數甲
+###### math2    數乙
 
 
