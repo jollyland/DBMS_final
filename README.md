@@ -1,11 +1,12 @@
 # Useage
-```
+```sh
     git clone  -b sortout https://github.com/jollyland/DBMS_final.git
 ```
-    
+```sh
+    cd DBMS_final
 ```
+```sh
     python generateDatabase.py -d "name of database" -n "user name" -password "password of user" -ip "ip of database server" -p "port of database server"
-    
 ```
 
 # Tables 
