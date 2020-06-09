@@ -1,10 +1,21 @@
+# Require 
+pandas
+```py
+pip install pandas
+```
+psycopg2 2.8.5
+```
+pip install psycopg2 
+```
 # Useage
+clone the repository
 ```sh
     git clone  -b sortout https://github.com/jollyland/DBMS_final.git
 ```
 ```sh
     cd DBMS_final
 ```
+run script 
 ```sh
     python generateDatabase.py -d "name of database" -n "user name" -password "password of user" -ip "ip of database server" -p "port of database server"
 ```
