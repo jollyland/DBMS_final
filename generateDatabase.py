@@ -502,7 +502,14 @@ def  InsertFuture(database):
     query += ';'
     
     database.execute(query)
-
+def CreateIndex(database):
+    print("Start create index")
+    query = '''CREATE INDEX ix_did ON department (id);
+                CREATE INDEX ix_uid  ON university (id);
+                CREATE INDEX ix_aca ON academy (name);
+               '''
+    database.execute(query)
+    print("Finish create index")
 
 # In[171]:
 
@@ -536,6 +543,8 @@ def run(options):
     
     CreateFuture(database)
     InsertFuture(database)
+
+     CreateIndex(database)
     
     print("Finish")
 
