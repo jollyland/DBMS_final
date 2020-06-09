@@ -544,7 +544,7 @@ def run(options):
     CreateFuture(database)
     InsertFuture(database)
 
-     CreateIndex(database)
+    CreateIndex(database)
     
     print("Finish")
 
