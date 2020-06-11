@@ -7,6 +7,10 @@ psycopg2 2.8.5
 ```
 pip install psycopg2 
 ```
+xlrd
+```
+pip install xlrd
+```
 # Useage
 clone the repository
 ```sh
