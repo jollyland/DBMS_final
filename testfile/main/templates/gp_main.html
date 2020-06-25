@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>依學群搜尋</title>
+    <style>
+        body{
+          text-decoration: none;
+          font-family: "微軟正黑體";
+        }
+        .gp_button{
+          border:0;
+          background-color:#003C9D;
+          border-radius:10px;
+          cursor:pointer;
+          height: 100px;
+          width: 160px;
+          display: inline-block;
+          text-align:center;
+          line-height:100px;
+          margin:10px;
+        }
+        .a_button{
+          text-decoration: none;
+          color:#FFF;
+        }
+
+    </style>
+</head>
+<body>
+
+<h4>有這麼多群喔</h4>
+{% for gp in gplist %}
+<div class="gp_button">
+    <a href="/gp/{{gp.name}}" class="a_button" >
+        {{ gp.name }}
+    </a>
+</div>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{keyword}} 的搜尋結果</title>
+        <style>
+    body{
+    font-family: "微軟正黑體";
+    text-decoration: none;
+    }
+    a{
+    text-decoration: none;
+    color: #000;
+    }
+    table{
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #003C9D;
+  color: white;
+}
+
+    </style>
+</head>
+<body>
+
+<table>
+
+    <th>學校代碼</th>
+    <th>學校名稱</th>
+
+    {% for d in result %}
+
+    <tr>
+        <td>
+            {{ d.id }}
+        </td>
+
+        <td>
+            {{ d.name }}
+        </td>
+    </tr>
+
+<!--上面可能不要用table 新增地址 下面應該還要有個科系-->
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+body{
+    font-family: "微軟正黑體";
+}
+table{
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #003C9D;
+  color: white;
+}
+
+
+    </style>
+    <title>{{gp.name}}學群</title>
+</head>
+<body>
+<p>應該要新增一點介紹</p>
+<table>
+    <th>科系名稱</th>
+    <th>核心科目</th>
+    {% for d in apt %}
+
+    <tr>
+
+        <td>
+            {{ d.department }}系
+        </td>
+        <td>
+            {{ d.subject }}
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+</body>
+</html>

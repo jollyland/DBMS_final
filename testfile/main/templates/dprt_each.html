@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+    body{
+    font-family: "微軟正黑體";
+    text-decoration: none;
+    }
+    a{
+    text-decoration: none;
+    color: #000;
+    }
+    table{
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 0.2px solid  #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #003C9D;
+  color: white;
+}
+
+    </style>
+</head>
+<body>
+<p>{{dpt.id}}</p>
+<p>{{dpt.name}}</p>
+<p>{{uni.name}}</p>
+<table>
+    <tr><th colspan="6">學測</th></tr>
+    <tr>
+    <th>錄取名額</th>
+    <th>國文</th>
+    <th>英文</th>
+    <th>數學</th>
+    <th>自然</th>
+    <th>社會</th>
+    </tr>
+    <tr>
+        <td>{{gsat.quota}}</td>
+        <td>{{gsat.chinese}}</td>
+        <td>{{gsat.english}}</td>
+        <td>{{gsat.math}}</td>
+        <td>{{gsat.science}}</td>
+        <td>{{gsat.society}}</td>
+    </tr>
+    <tr><th colspan="6">指考</th></tr>
+    <tr>
+    <th>錄取名額</th>
+    <th>國文</th>
+    <th>英文</th>
+    <th>數學</th>
+    <th>自然</th>
+    <th>社會</th>
+    </tr>
+    <tr>
+        <td>{{ast.quota}}</td>
+        <td>{{ast.chinese}}</td>
+        <td>{{ast.english}}</td>
+        <td>{{ast.math}}</td>
+        <td>{{ast.science}}</td>
+        <td>{{ast.society}}</td>
+    </tr>
+<table>
+</body>
+</html>

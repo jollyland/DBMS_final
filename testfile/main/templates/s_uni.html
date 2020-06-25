@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>依大學搜尋</title>
+</head>
+<body>
+<form action="/uni_search_result/" name="uni_search_input" method="get">
+    {% csrf_token %}
+    <input type="text" name="uni_keyword">
+    <input name="uni_s_con" type="radio" value="0">
+    <label for="0">依學校名稱</label>
+    <input name="uni_s_con" type="radio" value="1">
+    <label for="1">依學校代碼</label>
+    <input type="submit" value="查詢">
+</form>
+    <br>
+<form action="/uni_search_result/" name="uni_search_reg" method="get">
+    <select name="region">
+        {% for r in region %}
+        <option value="{{r}}"> {{r}} </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="依地區查詢">
+</form>
+</body>
+</html>

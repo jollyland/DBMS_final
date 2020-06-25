@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>依大學搜尋</title>
+</head>
+<body>
+<form action="/dpt_search_result/" name="dpt_search_input" method="get">
+    {% csrf_token %}
+    <input type="text" name="dpt_keyword">
+    <input type="submit" value="查詢">
+</form>
+</body>
+</html>
