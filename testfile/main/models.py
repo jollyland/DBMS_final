@@ -7,7 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 
 from django.db import models
-
+import logging
 
 class Academy(models.Model):
     name = models.CharField(primary_key=True, max_length=100)
@@ -113,6 +113,15 @@ class Career(models.Model):
         db_table = 'career'
 
 
+class University(models.Model):
+    id = models.CharField(primary_key=True, max_length=3)
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'university'
+
 class Department(models.Model):
     id = models.CharField(primary_key=True, max_length=100)
     name = models.CharField(max_length=100)
@@ -201,13 +210,4 @@ class Maindepartment(models.Model):
         db_table = 'maindepartment'
         unique_together = (('academy', 'department'),)
 
-
-class University(models.Model):
-    id = models.CharField(primary_key=True, max_length=3)
-    name = models.CharField(max_length=100)
-    position = models.CharField(max_length=100)
-
-    class Meta:
-        managed = False
-        db_table = 'university'
 
