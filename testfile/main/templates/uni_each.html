@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{keyword}} 的搜尋結果</title>
+    <title>{{uni.name}}</title>
         <style>
-    body{
+body{
+    margin: 40px;
+
     font-family: "微軟正黑體";
-    text-decoration: none;
-    margin:40px;
-    }
-    a{
-    text-decoration: none;
-    color: #000;
-    }
-    table{
+}
+table{
   border-collapse: collapse;
   width: 80%;
 }
@@ -35,12 +31,13 @@ th {
   color: white;
 }
 
+
     </style>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
 <body>
-<header>
+
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="index">上大學並沒有比較輕鬆</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,14 +56,14 @@ th {
     </div>
   </nav>
 </header>
+
 <div style="height:100px; top:0%"></div>
-
+  <h4>{{uni.name}}</h4>
 <table>
+    <th>科系代碼</th>
+    <th>科系名稱</th>
 
-    <th>學校代碼</th>
-    <th>學校名稱</th>
-
-    {% for d in result %}
+    {% for d in dpt %}
 
     <tr>
         <td>
@@ -74,14 +71,13 @@ th {
         </td>
 
         <td>
-            <a href="/uni/{{d.id}}">
-            {{ d.name }}
-                </a>
+            <a href=" /dprt/{{d.id}}">
+                {{ d.name }}
+            </a>
         </td>
     </tr>
 
-<!--上面可能不要用table 新增地址 下面應該還要有個科系-->
+
     {% endfor %}
-</table>
 </body>
 </html>

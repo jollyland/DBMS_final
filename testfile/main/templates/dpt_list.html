@@ -6,6 +6,8 @@
     <title>檢視全部</title>
     <style>
         body{
+            margin: 40px;
+
     font-family: "微軟正黑體";
     text-decoration: none;
     }
@@ -74,8 +76,9 @@ th {
             {{ d.id }}
         </td>
 
-        <td>
+        <td> <a href="/uni/{{d.university_id}}">
             {{d.university_id}}
+            </a>
 
         </td>
 

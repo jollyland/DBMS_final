@@ -29,6 +29,7 @@ urlpatterns = [
     path('search_apt/', views.search_apt),
     path('search_gp/', views.search_gp),
     path('list_all/', views.list_all),
+    path('uni/<str:uniid>', views.uni_each),
     path('dprt/<str:dprtid>', views.dprt_each),
     path('gp/<str:name>',views.gp_each),
     re_path(r'^.*', views.main),

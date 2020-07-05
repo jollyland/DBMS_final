@@ -37,7 +37,6 @@ def gp_each(request, name):
     context = {
         'gp': gplist,
         'apt': gpapt,
-        'info': info
     }
     return render(request, 'gp_each.html', context)
 
@@ -66,6 +65,18 @@ def dprt_each(request, dprtid):
         'ast': A,
     }
     return render(request, 'dprt_each.html', context)
+
+
+def uni_each(request, uniid):
+    uni = University.objects.get(id=uniid)
+    dpt = Department.objects.filter(university_id=uniid)
+
+
+    context = {
+        'uni': uni,
+        'dpt': dpt,
+    }
+    return render(request, 'uni_each.html', context)
 
 def uni_result(request):
     if 'uni_keyword' in request.GET and request.GET['uni_keyword'] != '' and 'uni_s_con' in request.GET and request.GET['uni_s_con'] !='' :
